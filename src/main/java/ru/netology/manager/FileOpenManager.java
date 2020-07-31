@@ -10,10 +10,12 @@ public class FileOpenManager {
     }
 
     public void deleteApp(String key){
+
         map.remove(key.toLowerCase());
     }
 
     public String getNameOfApp(String key){
+
         return map.get(key.toLowerCase());
     }
 
@@ -21,9 +23,8 @@ public class FileOpenManager {
         return map.keySet();
     }
 
-    public List<String> findAllApps(){
-        List<String> list = new ArrayList<>(map.values());
-        list.sort(Comparator.comparing(String::toLowerCase));
-        return list;
+    public Set<String> findAllApps() {
+        return new HashSet<>(map.values());
     }
+
 }
